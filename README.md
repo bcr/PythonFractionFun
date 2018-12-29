@@ -20,3 +20,11 @@
     = 3_1/2
 """
 ```
+
+## Running behave
+
+Running the command `behave` will do something interesting. If you don't have `behave` then see the section Installing behave.
+
+## Installing behave
+
+`pip3 install behave` worked for me, but you can consult the [behave docs](https://behave.readthedocs.io/en/latest/) if you want to understand more.
