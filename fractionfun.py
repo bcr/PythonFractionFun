@@ -1,7 +1,8 @@
 from fractions import Fraction
+import functools
 
 def mixed_number_to_fraction(raw):
-    return reduce(Fraction.__add__, map(Fraction, raw.split('_')))
+    return functools.reduce(Fraction.__add__, map(Fraction, raw.split('_')))
 
 def fraction_to_mixed_number_string(fraction):
     whole = int(fraction.numerator) / int(fraction.denominator)
