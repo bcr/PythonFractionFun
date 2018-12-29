@@ -30,10 +30,10 @@ Feature: Given requirements
         When we have the input "1/2 / 1/2"
         Then the output should be "1"
 
-    Scenario: Example run one.
+    Scenario: Example one from requirements.
         When we have the input "1/2 * 3_3/4"
         Then the output should be "1_7/8"
 
-    Scenario: Example run two.
+    Scenario: Example two from requirements.
         When we have the input "2_3/8 + 9/8"
         Then the output should be "3_1/2"
