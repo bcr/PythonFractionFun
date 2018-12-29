@@ -37,3 +37,16 @@ def process_input(input):
 
     # Return result
     return str(result)
+
+if __name__ == '__main__':
+    # Process command line
+
+    # In order to parse input on Python2, if you use "input" it will do
+    # unspeakable things to your input, so you need to use "raw_input"
+    # and this is fixed in Python3 where they just use "input". So enjoy
+    # the following from
+    # https://stackoverflow.com/questions/954834/how-do-i-use-raw-input-in-python-3
+    try: input = raw_input
+    except NameError: pass
+
+    print("= {}".format(process_input(input('? '))))
