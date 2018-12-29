@@ -5,7 +5,7 @@ def mixed_number_to_fraction(raw):
     return functools.reduce(Fraction.__add__, map(Fraction, raw.split('_')))
 
 def fraction_to_mixed_number_string(fraction):
-    whole = int(fraction.numerator) / int(fraction.denominator)
+    whole = int(fraction.numerator / fraction.denominator)
     remainder = fraction - whole
 
     if (whole != 0) and (remainder != 0):
