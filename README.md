@@ -21,6 +21,10 @@
 """
 ```
 
+## Running from the command line
+
+`python fractionfun.py` will give you a prompt and you can type stuff.
+
 ## Running behave
 
 Running the command `behave` will do something interesting. If you don't have `behave` then see the section Installing behave.
