@@ -1,11 +1,13 @@
-from __future__ import division # Force division to be floating point in Python 2
 from fractions import Fraction
 import functools
 import math
 import operator
 
 def mixed_number_to_fraction(raw):
-    return functools.reduce(Fraction.__add__, map(Fraction, raw.split('_')))
+    # For negative numbers, subtract the fractional part from the whole
+    op = operator.sub if raw[0] == '-' else operator.add
+
+    return functools.reduce(op, map(Fraction, raw.split('_')))
 
 def fraction_to_mixed_number_string(fraction):
     if fraction < 0:
