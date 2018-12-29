@@ -1,20 +1,28 @@
+from __future__ import division # Force division to be floating point in Python 2
 from fractions import Fraction
 import functools
+import math
 import operator
 
 def mixed_number_to_fraction(raw):
     return functools.reduce(Fraction.__add__, map(Fraction, raw.split('_')))
 
 def fraction_to_mixed_number_string(fraction):
-    whole = int(fraction.numerator / fraction.denominator)
+    if fraction < 0:
+        sign = "-"
+        fraction = -fraction
+    else:
+        sign = ""
+
+    whole = math.trunc(fraction.numerator / fraction.denominator)
     remainder = fraction - whole
 
     if (whole != 0) and (remainder != 0):
-        return_string = "{}_{}".format(whole, remainder)
+        return_string = "{}{}_{}".format(sign, whole, remainder)
     elif (remainder != 0):
-        return_string = "{}".format(remainder)
+        return_string = "{}{}".format(sign, remainder)
     else:
-        return_string = "{}".format(whole)
+        return_string = "{}{}".format(sign, whole)
 
     return return_string
 

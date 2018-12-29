@@ -29,6 +29,12 @@
 
 Running the command `behave` will do something interesting. If you don't have `behave` then see the section Installing behave.
 
+Note that running `behave` will pick a random Python to run with. I added `runbehave.py` so that you can run it with any Python you want. On my machine I do `python2 runbehave.py` and `python3 runbehave.py` to run with Python 2 and Python 3.
+
+## Running unit tests
+
+Running `test.py` with your Python of choice will run the unit tests.
+
 ## Installing behave
 
 `pip3 install behave` worked for me, but you can consult the [behave docs](https://behave.readthedocs.io/en/latest/) if you want to understand more.
