@@ -11,6 +11,19 @@ def mixed_number_to_fraction(raw):
     
     return Fraction(fractional) + Fraction(whole)
 
+def fraction_to_mixed_number_string(fraction):
+    whole = int(fraction.numerator) / int(fraction.denominator)
+    remainder = fraction - whole
+
+    if (whole != 0) and (remainder != 0):
+        return_string = "{}_{}".format(whole, remainder)
+    elif (remainder != 0):
+        return_string = "{}".format(remainder)
+    else:
+        return_string = "{}".format(whole)
+
+    return return_string
+
 def process_input(input):
     # Split on whitespace
     args = input.split()
@@ -36,7 +49,7 @@ def process_input(input):
         result = operand1 * operand2
 
     # Return result
-    return str(result)
+    return fraction_to_mixed_number_string(result)
 
 if __name__ == '__main__':
     # Process command line
