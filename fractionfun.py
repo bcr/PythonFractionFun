@@ -49,4 +49,5 @@ if __name__ == '__main__':
     try: input = raw_input
     except NameError: pass
 
-    print("= {}".format(process_input(input('? '))))
+    while True:
+        print("= {}".format(process_input(input('? '))))
