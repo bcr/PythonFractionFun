@@ -1,5 +1,6 @@
 from fractions import Fraction
 import functools
+import operator
 
 def mixed_number_to_fraction(raw):
     return functools.reduce(Fraction.__add__, map(Fraction, raw.split('_')))
@@ -17,29 +18,22 @@ def fraction_to_mixed_number_string(fraction):
 
     return return_string
 
+operator_map = {
+    '+':    operator.add,
+    '-':    operator.sub,
+    '*':    operator.mul,
+    '/':    operator.truediv
+    }
+
 def process_input(input):
-    # Split on whitespace
-    args = input.split()
+    # Split on whitespace into strings
+    (operand1, operator, operand2) = input.split()
 
-    # First argument is operand1
-    operand1 = mixed_number_to_fraction(args[0])
-
-    # Second is operator
-    operator = args[1]
-
-    # Third is operand2
-    operand2 = mixed_number_to_fraction(args[2])
+    # Convert operands to Fraction objects
+    (operand1, operand2) = map(mixed_number_to_fraction, (operand1, operand2))
 
     # Perform calculation
-
-    if operator == '+':
-        result = operand1 + operand2
-    elif operator == '-':
-        result = operand1 - operand2
-    elif operator == '/':
-        result = operand1 / operand2
-    elif operator == '*':
-        result = operand1 * operand2
+    result = operator_map[operator](operand1, operand2)
 
     # Return result
     return fraction_to_mixed_number_string(result)
