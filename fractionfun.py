@@ -1,4 +1,5 @@
 from fractions import Fraction
+from textwrap import dedent
 import functools
 import math
 import operator
@@ -36,6 +37,25 @@ operator_map = {
     }
 
 def process_input(input):
+    """
+    Takes an input expression and produces a result string.
+
+    Legal operators shall be *, /, +, - (multiply, divide, add, subtract).
+
+    Operands and operators shall be separated by one or more spaces.
+
+    Mixed numbers will be represented by whole_numerator/denominator. e.g. "3_1/4".
+
+    Improper fractions and whole numbers are also allowed as operands.
+
+    Example run
+    ? 1/2 * 3_3/4
+    = 1_7/8
+
+    ? 2_3/8 + 9/8
+    = 3_1/2
+    """
+
     # Split on whitespace into strings
     (operand1, operator, operand2) = input.split()
 
@@ -58,6 +78,9 @@ if __name__ == '__main__':
     # https://stackoverflow.com/questions/954834/how-do-i-use-raw-input-in-python-3
     try: input = raw_input
     except NameError: pass
+
+    # Print out the help, which is the docstring for the input function
+    print(dedent(process_input.__doc__))
 
     while True:
         print("= {}".format(process_input(input('? '))))
