@@ -35,6 +35,28 @@ Note that running `behave` will pick a random Python to run with. I added `runbe
 
 Running `test.py` with your Python of choice will run the unit tests.
 
+## Running code coverage
+
+```sh
+PythonFractionFun$ coverage3 run test.py
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
+PythonFractionFun$ coverage3 report
+Name             Stmts   Miss  Cover
+------------------------------------
+fractionfun.py      31      8    74%
+test.py             24      0   100%
+------------------------------------
+TOTAL               55      8    85%
+```
+
+## Installing coverage
+
+`pip3 install coverage` worked for me, but you can consult the [coverage docs](https://coverage.readthedocs.io/en/v4.5.x/) if you want to understand more.
+
 ## Installing behave
 
 `pip3 install behave` worked for me, but you can consult the [behave docs](https://behave.readthedocs.io/en/latest/) if you want to understand more.
