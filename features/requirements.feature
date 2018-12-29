@@ -8,11 +8,11 @@ Feature: Given requirements
 
     Scenario: Mixed numbers will be represented by whole_numerator/denominator. e.g. "3_1/4".
         When we have the input "3_1/4 + 0"
-        Then the output should be "3_1/4"
+        Then the output should be "13/4"
 
     Scenario: Improper fractions and whole numbers are also allowed as operands.
         When we have the input "9/8 + 2"
-        Then the output should be "3_1/8"
+        Then the output should be "25/8"
 
     Scenario: Multiplication works.
         When we have the input "1/2 * 2"
