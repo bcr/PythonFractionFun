@@ -28,7 +28,6 @@ class TestFractionStringFunctions(unittest.TestCase):
         self.roundtrip("-1/2")
 
     def test_negative_mixed(self):
-        self.assertEqual("-1_1/2", fractionfun.fraction_to_mixed_number_string(Fraction(-3, 2)))
         self.roundtrip("-1_1/2")
 
 if __name__ == '__main__':
